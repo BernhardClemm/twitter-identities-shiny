@@ -4,8 +4,7 @@ library(RColorBrewer)
 library(magrittr)
 library(tidyr)
 library(dplyr)
-
-# rsconnect::deployApp('/Users/bernhardclemm/Dropbox/PhD/Ideas/Identity Twitter/Test App')
+library(rsconnect)
 
 # Retreive data
 

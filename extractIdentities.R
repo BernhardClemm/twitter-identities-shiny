@@ -5,7 +5,8 @@ library(readtext)
 library(textclean)
 library(here)
 
-tweets <- read.csv("/Users/bernhardclemm/Dropbox/PhD/Apps/twitter-identities-shiny/App/data/tweets.csv")
+# setwd("/Users/bernhardclemm/Dropbox/PhD/Apps/Twitter Identities/twitter-identities-shiny")
+tweets <- read.csv("data/tweets.csv")
 
 # Unique set of tweeters
 
@@ -46,4 +47,4 @@ assign_identity(liberal)
 assign_identity(resist)
 assign_identity(maga)
 
-write.csv(tweeters, "/Users/bernhardclemm/Dropbox/PhD/Apps/twitter-identities-shiny/App/data/tweeters.csv", row.names=FALSE)
+write.csv(tweeters, "data/tweeters.csv", row.names=FALSE)
