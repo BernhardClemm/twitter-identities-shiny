@@ -13,14 +13,14 @@ tweeters <- read.csv("./data/tweeters.csv")
 ## Create dimensions of data to be visualized
 
 tweeters %<>% 
-  mutate(Political = case_when(conservative == 1 ~ "conservative",
-                               liberal == 1 ~ "liberal",
-                               resist == 1 ~ "resist",
-                               maga == 1 ~ "maga")) %>%
-  mutate(Social = case_when(mother == 1 ~ "mother",
-                            father == 1 ~ "father",
-                            husband == 1 ~ "husband",
-                            wife == 1 ~ "wife"))
+  mutate(Political = case_when(conservative == 1 ~ "Conservative",
+                               liberal == 1 ~ "Liberal",
+                               resist == 1 ~ "#resist",
+                               maga == 1 ~ "#maga")) %>%
+  mutate(Social = case_when(mother == 1 ~ "Mother/mom/mommy",
+                            father == 1 ~ "Father/dad",
+                            husband == 1 ~ "Husband",
+                            wife == 1 ~ "Wife"))
 # UI 
 
 ui <- bootstrapPage(
@@ -67,7 +67,7 @@ server <- function(input, output, session) {
     
     pal <- colorpal()
     proxy %>% addLegend(position = "bottomright",
-                          pal = pal, values = ~id)
+                          pal = pal, values = ~id, title = "Identity")
   })
 }
 

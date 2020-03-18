@@ -1,0 +1,12 @@
+name: twitter-identities-shiny
+title: twitter-identities-shiny
+username:
+account: bernhardclemm
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1961507
+bundleId: 2893688
+url: https://bernhardclemm.shinyapps.io/twitter-identities-shiny/
+when: 1584530479.36389
+asMultiple: FALSE
+asStatic: FALSE
