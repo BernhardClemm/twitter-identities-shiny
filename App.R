@@ -42,11 +42,17 @@ server <- function(input, output, session) {
   })
 
   colorpal <- reactive({
-    colorFactor(palette = "Dark2", tweeters$id)
+    colorFactor(
+      palette = c(
+      "#16aa65", "#1ab1cd", "#ef9cbb","#a73d14", 
+      "#003a9c", "#4d8dd4", "#9c0101", "#e70000"),
+      levels = c(
+        "Father/dad", "Husband", "Mother/mom/mommy", "Wife",
+        "#maga", "Conservative", "#resist", "Liberal"))
   })
   
   output$map <- renderLeaflet({
-    leaflet(tweeters) %>% addTiles() %>%
+    leaflet(tweeters) %>% addProviderTiles("Stamen.TonerLite") %>% #
       fitBounds(~min(long), ~min(lat), ~max(long), ~max(lat))
   })
   
@@ -55,8 +61,9 @@ server <- function(input, output, session) {
     
     leafletProxy("map", data = filteredData()) %>%
       clearShapes() %>%
-      addCircles(radius = 3, weight = 3, color = ~pal(id),
-                 fillColor = ~pal(id), fillOpacity = 0.7 
+      addCircles(radius = 1, weight = 8, color = ~pal(id),
+                 fillColor = ~pal(id), 
+                 opacity = 0.7, fillOpacity = 0.7
       )
   })
   

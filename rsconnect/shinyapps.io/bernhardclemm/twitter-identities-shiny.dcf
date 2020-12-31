@@ -5,8 +5,9 @@ account: bernhardclemm
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1961507
-bundleId: 2902262
+bundleId: 4045608
 url: https://bernhardclemm.shinyapps.io/twitter-identities-shiny/
-when: 1584717735.55369
+when: 1609427034.33085
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: data/.DS_Store
